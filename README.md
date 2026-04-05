@@ -1,26 +1,33 @@
 # Finance Dashboard
 
-A responsive React + Vite dashboard for personal finance tracking with charts, insights, and role-based access.
+A responsive finance dashboard built with React + Vite for tracking income and expenses through charts, insights, and role-based actions.
 
-## Features
+## Assignment Coverage
 
 - Dashboard overview with summary cards
-- Balance trend visualization (time-based)
-- Spending breakdown visualization (category-based)
+- Time-based visualization (Balance Trend)
+- Category-based visualization (Spending Breakdown)
 - Transaction list with details
 - Transaction filtering, sorting, and search
 - Role-based UI (Viewer and Admin)
-- Insights section for quick analysis
-- Zustand state management
-- Dark and light theme support
-- Responsive layout for desktop and mobile
-- INR currency formatting across the app
+- Insights section
+- State management with Zustand
+- Responsive design for desktop and mobile
+
+## Core Features
+
+- Real-time totals for balance, income, and expenses
+- Pie chart for expense category distribution
+- Line chart for month-by-month trend overview
+- Transaction add flow (Admin), read-only flow (Viewer)
+- Consistent INR formatting across cards, charts, and table
+- Light/Dark theme with persistent preference
 
 ## Tech Stack
 
 - React (JavaScript)
 - Vite
-- Tailwind CSS
+- Tailwind CSS + custom CSS variables
 - Recharts
 - Zustand
 - date-fns
@@ -42,38 +49,39 @@ finance-dashboard/
   public/
 ```
 
-## Getting Started
-
-### 1. Install dependencies
+## Local Setup
 
 ```bash
 npm install
-```
-
-### 2. Run development server
-
-```bash
 npm run dev
 ```
 
-### 3. Build for production
+## Build and Preview
 
 ```bash
 npm run build
-```
-
-### 4. Preview production build
-
-```bash
 npm run preview
 ```
 
+## Scripts
+
+- `npm run dev` - start development server
+- `npm run build` - production build
+- `npm run preview` - preview production build locally
+
 ## Roles
 
-- Viewer: can view dashboards and transactions
-- Admin: can add and manage transactions
+- Viewer: can view dashboard and transactions
+- Admin: can add/manage transactions
+
+## Technical Decisions and Trade-offs
+
+- Zustand was chosen over Redux for lower boilerplate and faster development.
+- Recharts was used to accelerate chart delivery with React-friendly APIs.
+- Data is currently mock/in-memory for assignment speed; backend persistence can be added later.
+- JavaScript was used for rapid iteration; TypeScript migration is straightforward if stricter typing is needed.
 
 ## Notes
 
 - Theme preference is saved in local storage.
-- Currency values are formatted in Indian Rupees (INR).
+- Currency formatting uses Indian Rupees (INR).
